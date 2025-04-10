@@ -24,6 +24,14 @@ def mod_calculate():
         print(f"{a:3} % {n}  mod:{a%n:>3}     {a:3} = {x} * {n} + {a%n:3}       {a:3} ÷ {n:>3} :  diviser: {x}   remainder:{a%n:>3}")
 
 
-n = int(input("輸入用於取模的數:"))
+while True:
+    try:
+        n = int(input("輸入用於取模的數: "))
+        if n > 0:
+            break  # 是正整數，跳出迴圈
+        else:
+            print("請輸入正整數！")
+    except ValueError:
+        print("請輸入有效的整數！")
 
 print(mod_calculate())
